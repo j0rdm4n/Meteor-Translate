@@ -1,0 +1,34 @@
+<!-- Handle new/join organisation box -->
+<template name="inputNewOrganisation">
+	<div class="clickAbleBox selectAbleBox">
+    <div>
+  		{{getText 'Add.Application'}}
+    </div>
+	</div>
+	<div class="editAbleBox selectAbleBox" style="display: none;">
+		<input type="text" id="searchText"/>
+	</div>
+</template>
+
+<!-- Handle list of organisations -->
+<template name="listTemplate">
+  {{#unless listCount}}
+	<!-- <br/>{{getText 'Add.or.create.organisation'}} -->
+  {{/unless}}
+
+  {{#each listOwner}}
+    <div class="btnItemOwner selectAbleBox">{{cutString name 20}}
+    	{{#if arrayLength pending}}
+    		<span class="badge badge-important" style="float: right; margin-right:5px;">{{arrayLength pending}}</span>
+    	{{/if}}
+    </div>
+  {{/each}}
+
+  {{#each listMember}}
+    <div class="btnItemMember selectAbleBox">{{cutString name 20}}</div>
+  {{/each}}
+
+  {{#each listPending}}
+    <div class="btnItemPending selectAbleBox" disabled="disabled">{{cutString name 20}}</div>
+  {{/each}}
+</template>

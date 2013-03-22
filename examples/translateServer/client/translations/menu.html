@@ -1,0 +1,45 @@
+<template name="menuProjects">
+
+	<div class="navbar navbar-static-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+
+			<ul class="nav">
+				<li><a href="#" class="goBack"><span class="icon-remove"></span></a></li>
+			</ul>
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+
+	      <!-- Be sure to leave the brand out there if you want it shown -->
+	      <a class="brand btnSettings" href="#">{{board.name}}
+	      	<small>
+	 	      {{#if isConnected}}
+	 	        <span class="hidden-phone">- Online</span>
+	 	        <span class="visible-phone"><span class="icon-signal"></span></span>
+	 	      {{else}}
+	 	        <span class="hidden-phone">- Offline</span>
+	 	        <span class="visible-phone"><span class="icon-home"></span></span>
+	 	      {{/if}}
+	 	    </small>
+	 	  </a>
+
+	 	<span style="float: right; padding-top:8px;">
+	 	  {{!<img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200&r=pg&d=mm"/>}}
+	 	</span>
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div class="nav-collapse collapse">
+			<!-- .nav, .navbar-search, .navbar-form, etc -->
+			<ul class="nav">
+				<li class="divider"></li>
+				<li><a href="">Item</a></li>
+			</ul>
+			</div>
+
+	    </div>
+	  </div>
+	</div>
+</template>

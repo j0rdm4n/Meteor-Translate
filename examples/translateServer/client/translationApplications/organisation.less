@@ -1,0 +1,54 @@
+@fadeTextColor: #bbb; 
+@textColor: #888; 
+@borderColor: #888;
+@backgroundColor: #eee;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+div.organisation {
+
+}
+
+div.organisation div.editAbleBox input#searchText {
+	width: 9em;
+	.rounded-corners(8px);
+}
+
+div.organisation .selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.organisation .selectAbleBox { 
+	height: 8em;
+	width: 10em;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+	cursor: pointer;
+	text-align: center;
+	margin: 1em;
+	float: left;
+	.rounded-corners(8px);
+}
+
+div.organisation .clickAbleBox { 
+	border: 1px dashed @borderColor;
+}
+
+div.organisation .editAbleBox { 
+}
+
+div.organisation .clickAbleBox div {
+	padding-top: 2.5em;
+}
+
+.btnMsgUser {
+	cursor: pointer;
+}

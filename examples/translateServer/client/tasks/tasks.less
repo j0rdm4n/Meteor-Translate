@@ -1,0 +1,123 @@
+@fadeTextColor: #bbb; 
+@textColor: #888; 
+@borderColor: #888;
+@backgroundColor: #eee;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+div.task {
+
+}
+
+div.task .selectAbleBox { 
+	height: 2em;
+	width: 20em;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+	.rounded-corners(8px);
+	cursor: pointer;
+	text-align: center;
+	vertical-align: top;
+	margin: 1em;
+	float: left;
+}
+
+div.task div.editAbleBox>input#searchText {
+	width: 19em;
+	.rounded-corners(8px);
+}
+
+div.task div.selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.task div.clickAbleBox { 
+	border: 1px dashed @borderColor;
+}
+
+div.task div.editAbleBox { 
+	height: 2em;
+}
+
+div.task div.clickAbleBox {
+	padding-top: 0.8em;
+}
+
+div.task div.newText {
+	width: 10em;
+	margin-left: 5em;
+}
+
+div.viewTask {
+	vertical-align: top;
+}
+
+div.viewTask>div.selectAbleBox {
+	width: 17em;
+	height: auto;
+	min-height: 3em;
+	max-height: inherit;
+	display: block;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+}
+
+div.viewTask>div.selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.viewTask>div.clickAbleBox {
+	width: 17em;
+	height: 3em;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px dashed @borderColor;
+}
+
+div.viewTask div.newText {
+	width: 10em;
+	padding-top: 1em;
+	margin-left: 3.5em;
+}
+
+div.viewTask>div.editAbleBox>input#searchText {
+	margin-top: 10px;
+}
+
+table.weekView {
+	border: 1px solid black;
+	max-width: 100%;
+}
+table.weekView tr{
+	border: 1px solid black;
+}
+table.weekView td {
+	min-width: 5em;
+	border: 1px solid black;
+}
+
+table.weekView th {
+	min-width: 5em;
+	border: 1px solid black;
+}
+
+table.weekView thead {
+}
+
+table.weekView tbody {
+	color:#000000;
+	text-align:center; 
+	overflow: auto; 
+	margin:0px;
+	max-width: 100%;
+}

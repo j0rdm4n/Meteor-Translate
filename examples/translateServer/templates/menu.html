@@ -1,0 +1,45 @@
+<template name="menu">
+
+	<div class="navbar navbar-static-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a href="http://www.gronide.dk" target="_blank">
+	 	 	 <img id="imgLogo" src="icon96.png" style="height:40px; float: left; padding-right:1em;"/> 	 	 
+	 	  </a>
+	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+
+	      <!-- Be sure to leave the brand out there if you want it shown -->
+	      <a class="brand" href="#">Basics
+	      	<small>
+	 	      {{#if isConnected}}
+	 	        <span class="hidden-phone">- Online</span>
+	 	        <span class="visible-phone"><span class="icon-signal"></span></span>
+	 	      {{else}}
+	 	        <span class="hidden-phone">- Offline</span>
+	 	        <span class="visible-phone"><span class="icon-home"></span></span>
+	 	      {{/if}}
+	 	    </small>
+	 	  </a>
+
+	 	<span style="float: right; padding-top:8px;">
+	 	  {{!<img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200&r=pg&d=mm"/>}}
+	 	  {{loginButtons align="right"}}
+	 	</span>
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div class="nav-collapse collapse">
+			<!-- .nav, .navbar-search, .navbar-form, etc -->
+			<ul class="nav">
+				<li class="divider"></li>
+				<li><a href="">Item</a></li>
+			</ul>
+			</div>
+
+	    </div>
+	  </div>
+	</div>
+</template>

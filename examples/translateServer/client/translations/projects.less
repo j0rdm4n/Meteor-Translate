@@ -1,0 +1,94 @@
+@fadeTextColor: #bbb; 
+@textColor: #888; 
+@borderColor: #888;
+@backgroundColor: #eee;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+div.project {
+
+}
+
+div.project .selectAbleBox { 
+	height: 8em;
+	width: 20em;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+	.rounded-corners(8px);
+	cursor: pointer;
+	text-align: center;
+	vertical-align: top;
+	margin: 1em;
+	float: left;
+}
+
+div.project>div.editAbleBox>input#searchText {
+	width: 9em;
+	.rounded-corners(8px);
+}
+
+div.project>div.selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.project>div.clickAbleBox { 
+	border: 1px dashed @borderColor;
+}
+
+div.project>div.editAbleBox { 
+}
+
+div.project>div.clickAbleBox {
+	padding-top: 2.5em;
+}
+
+div.project>div.newText {
+	width: 5em;
+	margin-left: 2.5em;
+}
+
+div.viewProject {
+	vertical-align: top;
+}
+
+div.viewProject>div.selectAbleBox {
+	width: 17em;
+	height: auto;
+	min-height: 3em;
+	max-height: inherit;
+	display: block;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+}
+
+div.viewProject>div.selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.viewProject>div.clickAbleBox {
+	width: 17em;
+	height: 3em;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px dashed @borderColor;
+}
+
+div.viewProject div.newText {
+	width: 10em;
+	padding-top: 1em;
+	margin-left: 3.5em;
+}
+
+div.viewProject>div.editAbleBox>input#searchText {
+	margin-top: 10px;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Translation",
+  "description": "Meteor Translation, adds `getText('hello')` and `{{getText 'hello'}}`",
+  "homepage": "https://github.com/raix/Meteor-Translation",
+  "author": "Morten Henriksen  (http://gi-software.com)",
+  "version": "0.0.1",
+  "git": "https://github.com/raix/Meteor-Translation.git",
+  "packages": {
+  }
+}

@@ -1,0 +1,72 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/> -->
+	<!-- Status bar color -->
+	<!--<meta name="apple-mobile-web-app-status-bar-style" 
+		  content="black-translucent">-->
+
+	<!-- Hide status bar-->
+	<meta name="apple-mobile-web-app-capable" content="yes" /> 
+
+	<!-- Icons -->
+	<link rel="icon" href="/icon96.png" />
+	<link rel="shortcut icon" href="/icon96.ico" /> <!-- ico -->
+
+	<!-- Link icon -->
+	<link rel="apple-touch-icon-precomposed" href="/icon96.png" />
+
+  <title>basics</title>
+</head>
+
+<body>
+  {{#if currentUser}}
+    {{#if sessionEquals 'view' 'organisations'}}
+		{{> menu }}
+		{{> messagesToUser}}
+    	{{> mainOrganisations }}
+    {{else}}
+	    {{#if sessionEquals 'view' 'boards'}}
+	    	{{> menuBoards}}
+			{{> messagesToUser}}
+	    	{{> mainBoards}}
+	    {{else}}
+		    {{#if sessionEquals 'view' 'projects'}}
+				{{> menuProjects }}
+				{{> messagesToUser}}
+			  	{{> mainProjects }}
+			{{else}}
+			    {{#if sessionEquals 'view' 'tasks'}}
+					{{> menuTasks }}
+					{{> messagesToUser}}
+				  	{{> mainTasks }}
+				{{else}}
+					{{#if sessionEquals 'view' 'organisationSettings'}}
+						{{> menuBoards}}
+						{{> messagesToUser}}
+						{{> organisationSettings}}
+					{{else}}
+						{{> menu }}
+					  	{{> main }}
+				  	{{/if}}
+				{{/if}}
+			{{/if}}
+		{{/if}}
+    {{/if}}
+  {{else}}
+  	{{> menu }}
+	<div class="row-fluid">
+	  <div class="span12 alert" style="text-align: center;">
+	  	{{#if loggingIn}}
+		    <h4 class="">Vent venligst...</h4>
+		    Kontakter server for login<br/>
+	  	{{else}}
+		    <h4 class="">Log ind i systemet for at komme igang</h4>
+		    Det er gratis at oprette sig som bruger.<br/>
+	    {{/if}}
+	  <div>
+	</div>
+  {{/if}}
+  <!-- Modals -->
+  {{>selectOrgToJoin}}
+</body>

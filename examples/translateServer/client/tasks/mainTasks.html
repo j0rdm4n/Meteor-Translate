@@ -1,0 +1,15 @@
+<template name="mainTasks">
+	<div class="task">
+		<table class="weekView">
+			<thead>
+				<tr>
+					<th>{{getText 'Tasks'}}</th>{{> daysHeadView}}
+				</tr>
+			</thead>
+			<tbody>
+				{{> listTasksTemplate}}
+				{{> inputNewTask}}
+			</tbody>
+		</table>
+	</div>
+</template>

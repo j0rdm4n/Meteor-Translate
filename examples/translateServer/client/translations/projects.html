@@ -1,0 +1,20 @@
+<!-- Handle new/join organisation box -->
+<template name="inputNewProject">
+	<div class="selectAbleBox clickAbleBox">
+    <div class="newText">
+  		{{getText 'Add.Project'}}
+    </div>
+	</div>
+	<div class="selectAbleBox editAbleBox" style="display: none;">
+		<input type="text" id="searchText"/>
+	</div>
+</template>
+
+<!-- Handle list of organisations -->
+<template name="listProjectsTemplate">
+  {{#each boards}}
+    <div class="btnItem selectAbleBox">
+      <span class="btnItemText">{{cutString name 20}}</span>
+    </div>
+  {{/each}}
+</template>

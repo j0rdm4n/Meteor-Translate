@@ -1,0 +1,69 @@
+@fadeTextColor: #bbb; 
+@textColor: #888; 
+@borderColor: #888;
+@backgroundColor: #eee;
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+div.board {
+	overflow-x:auto;
+	overflow-y:hidden;
+	white-space: nowrap;
+	height: 100%;
+	margin-top: -42px;
+}
+
+div.board>div.btnItem.selectAbleBox { 
+	max-height: 80%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+div.board div.selectAbleBox { 
+	.rounded-corners(8px);
+	cursor: pointer;
+	text-align: center;
+	vertical-align: top;
+	margin: 1em;
+	/*float: left;*/
+}
+
+div.board>div.editAbleBox>input#searchText {
+	width: 19em;
+	.rounded-corners(8px);
+}
+
+div.board>div.selectAbleBox:hover {
+	text-decoration: none;
+	color: @textColor;
+}
+
+div.board>div.selectAbleBox { 
+	height: auto;
+	max-height: inherit;
+	width: 20em;
+	margin-top: 50px;
+	color: @fadeTextColor;
+	background-color: @backgroundColor;
+	border: 1px solid @borderColor;
+	display: inline-block;
+}
+
+div.board>div.clickAbleBox { 
+	border: 1px dashed @borderColor;
+}
+
+div.board>div.editAbleBox { 
+	height: 8em;
+}
+
+div.board>div.clickAbleBox {
+	height: 5.5em;
+	padding-top: 2.5em;
+}

@@ -1,0 +1,26 @@
+<!-- Handle new/join organisation box -->
+<template name="inputNewBoard">
+	<div class="selectAbleBox clickAbleBox">
+    <div class="newText">
+  		{{getText 'Add.Language'}}
+    </div>
+	</div>
+	<div class="selectAbleBox editAbleBox" style="display: none;">
+		<input type="text" id="searchText" class="searchText"/>
+	</div>
+</template>
+
+<!-- Handle list of organisations -->
+<template name="listBoardsTemplate">
+  {{#each boards}}
+    <div class="boardContainer boardWidth">
+      <div class="cardContainer">
+        <div class="headContainer">{{cutString name 20}}</div>
+        <div class="subCardContainer">
+          {{> viewProjects}}
+        </div>
+        <div class="footContainer">{{> inputNewProject}}</div>
+      </div>
+    </div>
+  {{/each}}
+</template>

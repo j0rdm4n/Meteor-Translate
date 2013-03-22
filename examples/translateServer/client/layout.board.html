@@ -1,0 +1,23 @@
+<template name="mainBoardsLayoutTest">
+	<style type="text/css">
+
+	</style>
+
+	<div class="fullscreen">
+		{{> oneCard }}
+		{{> oneCard }}
+		{{> oneCard }}
+	</div>
+</template>
+
+<template name="oneCard">
+		<div class="boardContainer boardWidth">
+			<div class="cardContainer">
+				<div class="headContainer">Titel</div>
+				<div class="subCardContainer">
+					{{getText 'Test'}}
+				</div>
+				<div class="footContainer">Opret ny</div>
+			</div>
+		</div>
+</template>

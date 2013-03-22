@@ -1,0 +1,47 @@
+<template name="selectOrgToJoin">
+	<div id="selectOrgToJoin" class="modal hide fade">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    <h3>Organisationer</h3>
+	  	Vælg en organisation for at tilmelde<br/>
+	  </div>
+	  <div class="modal-body">
+	    <p>
+		    <a href="#" class="btn btn-success btn-block btnAdd" data-dismiss="modal" aria-hidden="true">
+		    	Opret ny
+		    	<br/>
+		    	<small>Tryk her for at oprette</small>
+		    </a>
+		    <h4>Søgning:</h4>
+	    	{{> searchJoinList}}
+	    </p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn btnCancel" data-dismiss="modal" aria-hidden="true">Tilbage</a>
+	  </div>
+	</div>
+</template>
+
+<template name="searchJoinList">
+	{{#each list}}
+		{{#if owner}}
+			<a href="#" class="btn btn-primary btn-block btnJoin" data-dismiss="modal" aria-hidden="true">
+				{{name}}
+				{{#with getUser owner}}
+					<br/><small> Tryk for at tilmelde, {{#if username}}Ejer:{{username}}{{else}}Ejer: <i>(Skjult)</i>{{/if}}</small>
+				{{/with}}
+			</a>
+		{{else}}
+			<a href="#" class="btn btn-block btnReJoin" data-dismiss="modal" aria-hidden="true">
+				Lukket: {{name}}
+				{{#with getUser lostOwner}}
+					<br/><small>Du er tidligere ejer: {{username}}, vil du genåbne?</small>
+				{{/with}}
+			</a>
+		{{/if}}
+	{{else}}
+		Der blev ikke fundet en organisation på søgning efter "{{getSession 'orgSearchName'}}"<br/>
+		<br/>
+		Du kan oprette en ny organisation ved at klikke på knappen "Opret ny"
+	{{/each}}	
+</template>

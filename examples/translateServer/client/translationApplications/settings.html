@@ -1,0 +1,168 @@
+<template name="organisationSettings">
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+				
+			</div>
+			<div class="span8">
+		   		{{> organisationSettingsTemplate}}
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="organisationSettingsTemplate">
+	{{#if getSession 'currentOrganisationId' }}
+		<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active"><a href="#tab1" data-toggle="tab">Overblik</a></li>
+		    {{#if userRole 'owner' 'member'}}
+			    <li><a href="#tab2" data-toggle="tab">
+			    	Brugere
+			    	{{> orgUsersPending}}
+			    </a></li>
+			{{/if}}
+		    {{#if userRole 'owner'}}
+		    	<li><a href="#tab3" data-toggle="tab">Detaljer</a></li>
+		    {{/if}}
+		    <li><a href="#tab4" data-toggle="tab">Hjælp</a></li>
+		  </ul>
+		  <div class="tab-content">
+		  	{{#if userRole 'owner' 'member'}}
+			    <div class="tab-pane active" id="tab1">
+			      {{>orgMain}}
+			    </div>
+		    {{else}}
+			    <div class="tab-pane active" id="tab1">
+			      {{>orgPending}}
+			    </div>
+		    {{/if}}
+			{{#if userRole 'owner' 'member'}}
+			    <div class="tab-pane" id="tab2">
+			      {{>orgUsers}}
+			    </div>
+			{{/if}}
+			{{#if userRole 'owner'}}
+			    <div class="tab-pane" id="tab3">
+			      {{>orgDetails}}
+			    </div>
+		    {{/if}}
+		    <div class="tab-pane" id="tab4">
+		      {{>orgHelp}}
+		    </div>
+		  </div>
+		</div>
+	{{else}}
+		<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active"><a href="#tab1" data-toggle="tab">Hjælp</a></li>
+		  </ul>
+		  <div class="tab-content">
+		    <div class="tab-pane active" id="tab1">
+		      {{>orgHelp}}
+		    </div>
+		  </div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="orgUsersPending">
+   	{{#if usersCountPending}}
+		<span class="badge badge-important">{{usersCountPending}}</span>
+	{{/if}}
+</template>
+
+<template name="orgMain">
+	<!-- Charts graphs and visual stuff -->
+</template>
+
+<template name="orgPending">
+	{{#with organisation}}
+		<legend>{{name}}</legend>
+		Afventer adgang
+	{{/with}}
+</template>
+
+<template name="orgUsers">
+	{{#with organisation}}
+		<legend>Ejere</legend>
+		{{#each owner}}
+			{{#with getUser this}}
+				<span class="label label-success btnMsgUser">{{username}} 
+					{{#if userRole 'owner'}}
+						<span class="icon-remove btnRemoveOwner"></span>
+					{{/if}}
+				</span>
+			{{/with}}
+		{{else}}
+		Ingen ejere?
+		{{/each}}
+		<legend>Medlemmer</legend>
+		{{#each member}}
+			{{#with getUser this}}
+				<span class="label label-info btnMsgUser">{{username}} 
+					{{#if userRole 'owner'}}
+						<span class="icon-remove btnRemoveMember"></span>
+					{{/if}}
+				</span>
+			{{/with}}
+		{{else}}
+		Der er ingen medlemmer endnu
+		{{/each}}
+
+		{{#if userRole 'owner'}}
+			<legend>Ønsker at blive medlem</legend>
+			{{#each pending}}
+				{{#with getUser this}}
+					<button type="button" class="btn btn-primary btnAddUser">Tilføj</button>
+					<button type="button" class="btn btn-danger btnDeclineUser">Afvis</button>
+					{{username}}
+				{{/with}}
+			{{else}}
+			Der er ingen medlemmer endnu
+			{{/each}}
+		{{/if}}
+
+	{{else}}
+	{{/with}}
+</template>
+
+<template name="orgDetails">
+	<legend>Stamdata for virksomhed</legend>
+	{{#with list}}
+		<label for="orgName">Virksomhedsnavn</label>
+		<input id="orgName" placeholder="Virksomhedens navn" value="{{name}}" required/>
+
+		<label for="orgVatNr">CVR nummer</label>
+		<input id="orgVatNr" placeholder="CVR nummer" value="{{vatNr}}" required/>
+
+		<label for="orgPhone">Tlf. nummer</label>
+		<input id="orgPhone" placeholder="Telefon" value="{{phone}}" required/>
+
+		<label for="orgEmail">Email</label>
+		<input id="orgEmail" placeholder="Email" value="{{email}}" required/>
+	{{/with}}
+	<br/>
+	<br/>
+
+	<a href="#" class="btn btn-primary btnSave">Gem</a>
+	<a href="#" class="btn">Tilbage</a>
+	<br/>
+	<br/>
+	<legend>Ophør</legend>
+	<a href="#" class="btn btn-danger btnDelete">Slet tilknytning til organisation</a><br/>
+	<br/>
+	<a href="#" class="btn btn-danger btnDelete">Nedlæg organisation</a>
+
+</template>
+
+<template name="orgHelp">
+	<legend>Vejledning</legend>
+	Her er en kort vejledning i hvordan du arbejder med organisationer i #<br/>
+	<h4>Tilknyt organisation</h4>
+	Du kan oprette en organisation som ejer eller anmode om at blive tilknyttet en organisation.<br/>
+
+	<h4>Fjern organisation</h4>
+	Ønsker du ikke længere tilknytning til organisationen er det muligt at fjerne denne fra listen.
+	<i>Bemærk at man ikke sletter selve organisationen eller dens data.</i>
+</template>
