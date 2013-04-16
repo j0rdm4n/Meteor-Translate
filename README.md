@@ -20,7 +20,8 @@ The main idear is to have a set of basic tools for handling languages:
 ```
 
 
-## The app server syncronizes to the main server __Meteor 0.6.2 allows server to server connections!__
+##Sync app with remote server
+The app server syncronizes to the main server __Meteor 0.6.2 allows server to server connections!__
 ```
   Translate.init({ remoteServer: 'http://'});
 ```
