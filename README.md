@@ -21,9 +21,9 @@ The main idear is to have a set of basic tools for handling languages:
 
 
 ##Sync app with remote server
-The app server syncronizes to the main server __Meteor 0.6.2 allows server to server connections!__
+The app server syncronizes to the main server *Meteor 0.6.2 allows server to server connections!*
 ```
-  Translate.init({ remoteServer: 'http://'});
+  Translate.init({ remoteServer: 'http://translate.meteor.com'});
 ```
 
 ## The translation server
@@ -35,4 +35,7 @@ Collaborate about translation
 * Some point system for giving credit
 * All tranlations are shared, but copyed to app
 
+## TODO
+* Alot... Refractoring code to make a working testable version
+* Find a naming convention for notations eg. dotted: 'Say.hello.to.me'
 
