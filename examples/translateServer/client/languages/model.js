@@ -4,7 +4,7 @@
 
 Session.setDefault('currentBoardId', '');
 
-var languages = new Meteor.Collection('languages');
+languages = new Meteor.Collection('languages');
 
 Deps.autorun(function() {
 	Meteor.subscribe('languagesAdmin', Session.get('currentOrganisationId'));

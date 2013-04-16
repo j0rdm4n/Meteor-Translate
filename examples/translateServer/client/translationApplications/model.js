@@ -5,7 +5,7 @@
 Session.setDefault('view', 'organisations');
 Session.setDefault('currentOrganisationId', '');
 
-var translationApplications = new Meteor.Collection('translationApplications');
+translationApplications = new Meteor.Collection('translationApplications');
 
 function setCurrentOrganisation(orgId, role) {
 	Session.set('currentOrganisationId', orgId);

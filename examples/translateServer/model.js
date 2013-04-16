@@ -4,5 +4,5 @@
 //var languages = new Meteor.Collection('languages');
 //var translations = new Meteor.Collection('translations');
 
-var tasks = new Meteor.Collection('tasks');
+tasks = new Meteor.Collection('tasks');
 

@@ -1,4 +1,4 @@
-var Translate = {
+Translate = {
 
 	_translations: null,
 	_languages: null,

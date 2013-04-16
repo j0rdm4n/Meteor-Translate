@@ -1,6 +1,6 @@
 Session.setDefault('currentProjectId', '');
 
-var translations = new Meteor.Collection('translations');
+translations = new Meteor.Collection('translations');
 
 Deps.autorun(function() {
 	Meteor.subscribe('translationsAdmin', Session.get('currentOrganisationId'), Session.get('currentBoardId'));

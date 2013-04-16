@@ -16,10 +16,12 @@
 	<!-- Link icon -->
 	<link rel="apple-touch-icon-precomposed" href="/icon96.png" />
 
-  <title>basics</title>
+  <title>Translate</title>
 </head>
 
 <body>
+<a href="https://github.com/raix/Meteor-Translate.git"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  	
   {{#if currentUser}}
     {{#if sessionEquals 'view' 'organisations'}}
 		{{> menu }}
@@ -58,11 +60,12 @@
 	<div class="row-fluid">
 	  <div class="span12 alert" style="text-align: center;">
 	  	{{#if loggingIn}}
-		    <h4 class="">Vent venligst...</h4>
+		    <h4 class="">Please wait...</h4>
 		    Kontakter server for login<br/>
 	  	{{else}}
-		    <h4 class="">Log ind i systemet for at komme igang</h4>
-		    Det er gratis at oprette sig som bruger.<br/>
+		    <h4 class="">Login to get started</h4>
+		    Shared translation, It's free - And under heavy development...<br/>
+		    (Is undergoing refractoring supporting the new Meteor 0.6.2)
 	    {{/if}}
 	  <div>
 	</div>

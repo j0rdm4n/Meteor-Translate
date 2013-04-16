@@ -1,9 +1,9 @@
 // Public server collections
-var translationApplications = new Meteor.Collection('translationApplications');
-var languages = new Meteor.Collection('languages');
-var translations = new Meteor.Collection('translations');
+translationApplications = new Meteor.Collection('translationApplications');
+languages = new Meteor.Collection('languages');
+translations = new Meteor.Collection('translations');
 
-var Translate = {};
+Translate = {};
 
 (function() {
   /* Error constants TODO: Make available to client?  */
